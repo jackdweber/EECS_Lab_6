@@ -2,6 +2,7 @@
 #	Date: 2016.10.26
 
 
+
 #Add needed Test.o
 prog: main.o
 	g++ -g -Wall -std=c++11 main.o LinkedListOfInts.o -o prog
@@ -9,6 +10,10 @@ prog: main.o
 
 main.o: main.cpp 
 	g++ -g -Wall -std=c++11 -c main.cpp
+
+test.o: test.cpp 
+	g++ -g -Wall -std=c++11 -c test.cpp
+
 
 
 #Add needed Test.o recipe and compiler command

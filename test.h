@@ -51,6 +51,7 @@ public:
 			std::cout << "Test Create List: FAILED \n";
 		}
 
+		std::cout << "\n";
 		if(isEmptyTest()){
 			std::cout << "Test Create List: PASSED \n";
 		}

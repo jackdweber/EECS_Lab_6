@@ -2,7 +2,7 @@
 #	Date: 2016.10.26
 
 prog: main.o
-	g++ -g -Wall -std=c++11 main.o test.o LinkedListOfInts.o -o prog
+	g++ -g -Wall -std=c++11 main.o LinkedListOfInts.o -o prog
 
 main.o: main.cpp 
 	g++ -g -Wall -std=c++11 -c main.cpp
@@ -17,4 +17,4 @@ test.o: test.h test.cpp
 
 #DON'T delete LinkedList.o!
 clean:
-	rm main.o test.o prog
+	rm main.o prog

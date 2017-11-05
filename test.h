@@ -2,6 +2,8 @@
 #define TEST_H
 
 #include "LinkedListOfInts.h"
+#include <iostream>
+#include <vector>
 
 class Tester {
 
@@ -88,6 +90,27 @@ private:
 		return r;
 	}
 
+	bool addBackTest(){
+		bool r = true;
+		list = new LinkedListOfInts();
+		for(int i = 0; i < 10; i++){
+			list->addBack(i);
+		}
+
+		std::vector<int> vect = list->toVector();
+
+		if(vect.back() != 9){
+			std::cout << "ERROR: Addback did not work adding 0-9, it believes the back is: ";
+			std::cout << vect.back();
+			std::cout << "\n";
+			r = false;
+		}
+
+		delete list;
+		return r;
+
+	}
+
 public:
 
 	void runTest(){
@@ -117,10 +140,18 @@ public:
 
 		std::cout << "\n";
 		if(searchTest()){
-			std::cout << "Test Size: PASSED \n";
+			std::cout << "Test Search: PASSED \n";
 		}
 		else{
-			std::cout << "Test Size: FAILED \n";
+			std::cout << "Test Search: FAILED \n";
+		}
+
+		std::cout << "\n";
+		if(addBackTest()){
+			std::cout << "Test addBack: PASSED \n";
+		}
+		else{
+			std::cout << "Test addBack: FAILED \n";
 		}
 	}
 };

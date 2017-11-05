@@ -64,7 +64,28 @@ private:
 		}
 		delete list;
 		return r;
+	}
 
+	bool searchTest(){
+		bool r = true;
+		list = new LinkedListOfInts();
+		for(int i = 0; i < 10; i++){
+			list->addBack(i);
+		}
+		if(!list->search(0)){
+			r = false;
+			std::cout << "ERROR: failed to find node at front. \n";
+		}
+		if(!list->search(9)){
+			r = false;
+			std::cout << "ERROR: failed to find node at back. \n";
+		}
+		if(!list->search(5)){
+			r = false;
+			std::cout << "ERROR: failed to find node in middle. \n";
+		}
+		delete list;
+		return r;
 	}
 
 public:
@@ -88,6 +109,14 @@ public:
 
 		std::cout << "\n";
 		if(sizeTest()){
+			std::cout << "Test Size: PASSED \n";
+		}
+		else{
+			std::cout << "Test Size: FAILED \n";
+		}
+
+		std::cout << "\n";
+		if(searchTest()){
 			std::cout << "Test Size: PASSED \n";
 		}
 		else{

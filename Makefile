@@ -4,11 +4,11 @@
 prog: main.o
 	g++ -g -Wall -std=c++11 main.o test.o LinkedListOfInts.o -o prog
 
-test.o: test.cpp test.h
-	g++ -g -Wall -std=c++11 -c test.cpp
-
 main.o: main.cpp 
 	g++ -g -Wall -std=c++11 -c main.cpp
+
+test.o: test.h test.cpp
+	g++ -g -Wall -std=c++11 -c test.cpp
 
 
 
@@ -17,4 +17,4 @@ main.o: main.cpp
 
 #DON'T delete LinkedList.o!
 clean:
-	rm main.o *.*~ prog
+	rm main.o test.o prog

@@ -99,16 +99,39 @@ private:
 
 		std::vector<int> vect = list->toVector();
 
-		if(vect.back() != 9){
-			std::cout << "ERROR: Addback did not work adding 0-9, it believes the back is: ";
-			std::cout << vect.back();
-			std::cout << "\n";
-			r = false;
+		for(int i = 0; i < 10; i++){
+			if(vect[i] != i){
+				std::cout << "ERROR: Addback failed at index: ";
+				std::cout << i;
+				std::cout << "\n";
+				r = false;
+			}
 		}
 
 		delete list;
 		return r;
+	}
 
+	bool addFrontTest(){
+		bool r = true;
+		list = new LinkedListOfInts();
+		for(int i = 0; i < 10; i++){
+			list->addFront(i);
+		}
+
+		std::vector<int> vect = list->toVector();
+
+		for(int i = 0; i < 10; i++){
+			if(vect[i] != 9 - i){
+				std::cout << "ERROR: Addback failed at index: ";
+				std::cout << i;
+				std::cout << "\n";
+				r = false;
+			}
+		}
+
+		delete list;
+		return r;
 	}
 
 public:
@@ -153,6 +176,16 @@ public:
 		else{
 			std::cout << "Test addBack: FAILED \n";
 		}
+
+		std::cout << "\n";
+		if(addFrontTest()){
+			std::cout << "Test addFront: PASSED \n";
+		}
+		else{
+			std::cout << "Test addFront: FAILED \n";
+		}
+
+		std::cout << "\n";
 	}
 };
 

@@ -4,7 +4,7 @@
 prog: main.o
 	g++ -g -Wall -std=c++11 main.o test.o LinkedListOfInts.o -o prog
 
-test.o: test.cpp 
+test.o: test.cpp test.h
 	g++ -g -Wall -std=c++11 -c test.cpp
 
 main.o: main.cpp 

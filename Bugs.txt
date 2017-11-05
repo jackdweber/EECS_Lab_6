@@ -1,0 +1,10 @@
+The list of bugs I believe there are.
+
+IsEmpty works only for empty lists, I believe that it just returns true.
+
+AddBack seems to work as AddFront should.
+
+I do not believe RemoveBack does anything. The Vector before and after removal were the same.
+
+RemoveFront is broken, but it does remove one element. Probably is broken because isEmpty is also.
+

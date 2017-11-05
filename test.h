@@ -134,6 +134,36 @@ private:
 		return r;
 	}
 
+	bool removeBackTest(){
+		bool r = true;
+		list = new LinkedListOfInts();
+		for(int i = 0; i < 10; i++){
+			list->addBack(i);
+		}
+		std::vector<int> vect1 = list->toVector();
+		for(int i = 0; i < 3; i++){
+			list->removeBack();
+		}
+		std::vector<int> vect2 = list->toVector();
+		
+		if(vect2.size() != 6){
+			std::cout << "ERROR: Incorrect size after removing.\n";
+			r = false;
+		}
+
+		for(int i = 0; i < (int) vect2.size(); i++){
+			if(vect1[i] != vect2[i]){
+				std::cout << "ERROR: items are not the same at at index: ";
+				std::cout << i;
+				std::cout << "\n";
+				r = false;
+			}
+		}
+
+		delete list;
+		return r;
+	}
+
 public:
 
 	void runTest(){
@@ -183,6 +213,14 @@ public:
 		}
 		else{
 			std::cout << "Test addFront: FAILED \n";
+		}
+
+		std::cout << "\n";
+		if(removeBackTest()){
+			std::cout << "Test removeBack: PASSED \n";
+		}
+		else{
+			std::cout << "Test removeBack: FAILED \n";
 		}
 
 		std::cout << "\n";

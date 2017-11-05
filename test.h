@@ -23,19 +23,19 @@ private:
 		list = new LinkedListOfInts();
 		if(!list->isEmpty()){
 			r = false;
-			std::cout << "ERROR: list not empty after creation.";
+			std::cout << "ERROR: list not empty after creation. \n";
 		}
 		list->addBack(1);
 		if(list->isEmpty()){
 			r = false;
-			std::cout << "ERROR: list empty after addBack.";
+			std::cout << "ERROR: list empty after addBack. \n";
 		}
 		delete list;
 		list = new LinkedListOfInts();
 		list->addFront(1);
 		if(list->isEmpty()){
 			r = false;
-			std::cout << "ERROR: list empty after addFront.";
+			std::cout << "ERROR: list empty after addFront. \n";
 		}
 		return r;
 	}
@@ -48,16 +48,15 @@ public:
 			std::cout << "Test Create List: PASSED \n";
 		}
 		else{
-			std::cout << "Test Create List: FAILED \n";s
+			std::cout << "Test Create List: FAILED \n";
 		}
 
 		if(isEmptyTest()){
 			std::cout << "Test Create List: PASSED \n";
 		}
 		else{
-			std::cout << "Test Create List: FAILED \n";s
+			std::cout << "Test Create List: FAILED \n";
 		}
-
 	}
 };
 

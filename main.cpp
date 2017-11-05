@@ -6,6 +6,7 @@
 */
 #include <iostream>
 #include "LinkedListOfInts.h"
+#include "test.h"
 #include "test.cpp"
 
 int main(int argc, char** argv)
@@ -18,6 +19,7 @@ int main(int argc, char** argv)
 	//TestSuite myTester;
 	//myTester.runTests();
 
+	runTest();
 
 	std::cout << "Running...\nAnd we're done.\nGoodbye.\n";
 	
